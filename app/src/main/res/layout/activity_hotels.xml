@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#B067F8"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Hotels">
+
+    <!--Se que falta el RecyclerView pero no supe como ponerlo-->
+
+    <!--He  intentado arreglar el porque se corta la pantalla pero no he encontrado el motvio-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#79A2CF"
+                app:title="EasyStay"
+                app:titleTextColor="@color/black">
+
+                <!--Boton de la maleta que no sale entera-->
+                <ImageButton
+                    android:layout_marginLeft="260dp"
+                    android:id="@+id/imageButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/icono4"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        <!--Include para llamar al CardView de los hoteles-->
+        <include layout="@layout/item_hotel"></include>
+
+    </LinearLayout>
+
+    <!--NavigationView para mostrar el menu lateral-->
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:paddingTop="50dp"
+        app:menu="@menu/menu_deslizante"></com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
